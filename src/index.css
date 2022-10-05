@@ -11,3 +11,154 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.grass{
+  background-color: #74cb48;
+}
+.fire{
+  background-color: #f57d31;
+}
+.rock{
+  background-color: #b69e31;
+}
+.water{
+  background-color: #6493eb;
+}
+.ghost{
+  background-color: #6493eb;
+}
+.bug{
+  background-color: #a7b723;
+}
+.normal{
+  background-color: #aaa67f;
+}
+.poison{
+  background-color: #a43e9e;
+}
+.electric{
+  background-color: #f9cf30;
+}
+.dark{
+  background-color: #75574c;
+}
+.steel{
+  background-color: #b7b9d0;
+}
+.psychic{
+  background-color: #fb5584;
+}
+.ice{
+  background-color: #9ad6df;
+}
+.fairy{
+  background-color: #e69eac;
+}
+.ground{
+  background-color: #dec16b;
+}
+.dragon{
+  background-color: #7037ff;
+}
+.flying{
+  background-color: #a891ec;
+}
+.fighting{
+  background-color: #c12239;
+}
+:root {
+  
+  --color-dark-gray: #212121;
+  --color-medium-gray: #666666;
+  --color-light-gray: #e0e0e0;
+  --color-white: #ffffff;
+  --color-background: #f7f7f7;
+
+  --color-type-rock: #b69e31;
+  --color-type-ghost: #70559b;
+  --color-type-steel: #b7b9d0;
+  --color-type-water: #6493eb;
+  --color-type-grass: #74cb48;
+  --color-type-psychic: #fb5584;
+  --color-type-ice: #9ad6df;
+  --color-type-dark: #75574c;
+  --color-type-fairy: #e69eac;
+  --color-type-normal: #aaa67f;
+  --color-type-fighting: #c12239;
+  --color-type-flying: #a891ec;
+  --color-type-poison: #a43e9e;
+  --color-type-ground: #dec16b;
+  --color-type-bug: #a7b723;
+  --color-type-fire: #f57d31;
+  --color-type-electric: #f9cf30;
+  --color-type-dragon: #7037ff;
+  
+  --spacing-xtiny: 0.25rem;   /*4px*/
+  --spacing-tiny: 0.5rem;     /*8px*/
+  --spacing-small: 0.75rem;   /*12px*/
+  --spacing-mini: 1rem;       /*16px*/
+  --spacing-base: 1.5rem;     /*24px*/
+  --spacing-medium: 2rem;     /*32px*/
+  --spacing-large: 3rem;      /*48px*/
+
+  --gap-lateral: 48px;
+}
+.font-regular-tiny {
+  font-size: 0.625rem;
+  line-height: 1rem;
+  font-weight: 400;
+}
+.font-regular-small {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 400;
+}
+.font-regular-medium {
+  font-size: 0.875rem;
+  line-height: 1rem;
+  font-weight: 400;
+}
+.font-regular-large {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 400;
+}
+.font-bold-tiny {
+  font-size: 0.625rem;
+  line-height: 1rem;
+  font-weight: 700;
+}
+.font-bold-small {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 700;
+}
+.font-bold-medium {
+  font-size: 0.875rem;
+  line-height: 1rem;
+  font-weight: 700;
+  margin-block-start: -0.83em;
+  margin-block-end: -0.83em;
+}
+.font-bold-large {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+  margin-block-start: -1em;
+  margin-block-end: -1rem;
+}
+
+.card__type--fire {
+  --color-card-type: var(--color-type-fire)
+}
+.card__type--ice {
+  --color-card-type: var(--color-type-ice)
+}
+.card__type--grass {
+  --color-card-type: var(--color-type-grass)
+}
+.card__type--water {
+  --color-card-type: var(--color-type-water)
+}
+.capitalize::first-letter{
+    text-transform: uppercase;
+}
