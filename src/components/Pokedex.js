@@ -11,7 +11,7 @@ export const Pokedex = (props) =>{
             </div>
             <div className="pokedex__grid">
                 {pokemons.map((pokemon, idx) =>{
-                    // console.log(description[idx].flavor_text_entries[9]) Comele el nepe a oteiza
+                    // console.log(description[idx].flavor_text_entries[9]) 
                     return(
                         <Pokemon description={description[idx].flavor_text_entries[9].flavor_text} pokemon={pokemon} key={pokemon.name} />
                     )
