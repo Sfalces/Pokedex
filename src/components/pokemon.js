@@ -113,7 +113,7 @@ export const Pokemon = (props) => {
               </div>
             </div>
           </div>
-          <div className="font-regular-small">{description}</div>
+          <div className="card__description font-regular-small">{description}</div>
         </div>
       </div>
     </div>
