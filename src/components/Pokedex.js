@@ -18,7 +18,7 @@ export const Pokedex = (props) => {
     return(
         <div className="pokedex">
             <div className="header">
-                <h1>Pokedex</h1>
+                <h1>Pokédex</h1>
                 <Pagination 
                  page={page + 1}
                  totalPages={total}
