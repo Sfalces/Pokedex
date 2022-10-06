@@ -13,7 +13,6 @@ export const Pokemon = (props) => {
   const toggleClass = () => {
     setActive(!isActive);
   };
-
   return (
     <div className="Pokemon">
         <div className="D3__div"
@@ -43,6 +42,16 @@ export const Pokemon = (props) => {
           />
         </div>
         <div className="pokemon__info">
+          <div className="card__basestats font-bold-tiny">
+            <div className="card__stats"> 
+              <div>hp {pokemon.stats[0].base_stat}&#10084;&#65039;</div>
+              <div>atq {pokemon.stats[1].base_stat}⚔️</div>
+            </div>
+            <div className="card__stats"> 
+              <div>def {pokemon.stats[2].base_stat}🛡️</div>
+              <div>spd {pokemon.stats[5].base_stat}🥾</div>
+            </div>
+          </div>
           <div className="pokemon-type">
             {pokemon.types.map((type, idx) => {
               return (

@@ -10,10 +10,13 @@ import {getPokemonDesc} from './api';
 function App() {
   const [pokemons, setPokemons] = useState([])
   const [description, setDescription] = useState([])
+  const [page, setPage] = useState(0)
+  const [total, setTotal] = useState(0)
+  const [loading, setLoading] = useState(true)
 
   const fetchDescription = async () => {
     try{
-      const data = await getPokemons()
+      const data = await getPokemons(25, 25 * page)
       const promises = data.results.map(async(pokemon) => {
         return await getPokemonDesc(pokemon.name)
       })
@@ -27,24 +30,27 @@ function App() {
 
   const fetchPokemons= async () => {
     try{
-      const data = await getPokemons()
+      const data = await getPokemons(25, 25 * page)
       const promises= data.results.map(async(pokemon) => {
         return await getPokemonData(pokemon.url)
       })
       const results = await Promise.all(promises)
       console.log(results)
       setPokemons(results)
+      setLoading(false)
+      setTotal(Math.ceil(data.count /25))
     }
   catch(err){}
   }
 
   useEffect(()=> {
-    fetchDescription()
-  }, [])
+     fetchDescription()
+   }, [page])
 
   useEffect(()=> {
     fetchPokemons()
-  }, [])
+  }, [page])
+
   
   return (
     <div className="App">
@@ -52,10 +58,16 @@ function App() {
         <Navrbar />
       </header>
       <SearchBar />
+      { loading ? <div className='loading font-bold-large'>Cargando pokemons...</div>:
       <Pokedex 
         description={description}
         pokemons={pokemons}
+        page = {page}
+        setPage={setPage}
+        total={total}
+        setTotal={setTotal}
       />
+      }
     </div>
   );
 }

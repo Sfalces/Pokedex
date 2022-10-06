@@ -9,7 +9,7 @@ export const Navrbar = () => {
         <nav className="Poke__Nav">
             <div>
                 <div>
-                    <img className="PokeApi" src={imgUrl} alt=""/> &#10084;
+                    <img className="PokeApi" src={imgUrl} alt=""/> &#10084;&#65039;
                 </div>      
             </div>
         </nav>
