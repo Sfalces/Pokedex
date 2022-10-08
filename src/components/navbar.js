@@ -8,9 +8,9 @@ export const Navrbar = () => {
     return(
         <nav className="Poke__Nav">
             <div>
-                <div>
+                <a className="pokeApi__img" href="http://localhost:3000/">
                     <img className="PokeApi" src={imgUrl} alt=""/> &#10084;&#65039;
-                </div>      
+                </a>      
             </div>
         </nav>
     )

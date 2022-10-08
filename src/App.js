@@ -17,22 +17,24 @@ function App() {
 
   const onSearch= async (pokemon) =>{
     if (!pokemon) {
+      fetchDescription()
       return fetchPokemons()
     }
     setLoading(true)
+    setNotFound(false)
     const result = await searchPokemon(pokemon)
-    // const data = await getPokemonDesc(pokemon)   Bug obtener descripcion
+    const data = await getPokemonDesc(pokemon)   
     if (!result) {
       setNotFound(true)
       setLoading(false)
       return
     }else{
     setPokemons([result])
-    // setDescription([data])
+     setDescription([data])
     setPage(0)
     setTotal(1)
     }
-    setLoading(false) 
+    setLoading(false)
   }
 
   const fetchDescription = async () => {
@@ -42,8 +44,6 @@ function App() {
         return await getPokemonDesc(pokemon.name)
       })
       const results= await Promise.all(promises)
-      console.log(data)
-      console.log(results)
       setDescription(results)
     }
   catch(err){}
@@ -56,7 +56,6 @@ function App() {
         return await getPokemonData(pokemon.url)
       })
       const results = await Promise.all(promises)
-      console.log(results)
       setPokemons(results)
       setLoading(false)
       setTotal(Math.ceil(data.count /25))
@@ -71,7 +70,8 @@ function App() {
    }, [page])
 
   useEffect(()=> {
-      fetchPokemons();
+  
+      fetchPokemons()
   }, [page]);
 
   
@@ -82,6 +82,7 @@ function App() {
       </header>
       <SearchBar 
       onSearch = {onSearch}
+      pokemons = {pokemons}
       />
       { notFound ? (<div>No existe ese pokemon</div>):(
       <Pokedex 

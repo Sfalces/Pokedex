@@ -32,7 +32,7 @@ export const Pokedex = (props) => {
             <div className="pokedex__grid">
                 {pokemons.map((pokemon, idx) =>{ 
                     return(
-                        <Pokemon description={description[idx].flavor_text_entries[9].flavor_text} pokemon={pokemon} key={pokemon.name} />
+                        <Pokemon description={description?.[idx]?.flavor_text_entries?.[9]?.flavor_text} pokemon={pokemon} key={pokemon.name} />
                     )
                 })}
             </div>
